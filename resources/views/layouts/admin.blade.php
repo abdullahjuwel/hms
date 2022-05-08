@@ -41,7 +41,7 @@
 <![endif]-->
 
 <style type="text/css">
-    .zoom {
+  .zoom {
     transition: transform .2s; /* Animation */
     margin: 0 auto;
   }
@@ -66,65 +66,70 @@
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-user"></i>
               You are accessing as
-              <b>Admin</b>
-            </a></li>
-          </ol>
-        </section>
-        @yield('content')
-      </div>
-      <!-- /.container -->
+              Admin
+            </a>
+            <a href="#" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">&nbsp;&nbsp;(<b>Logout</b>)</a>
+          </li>
+        </ol>
+      </section>
+      <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
+        {{ csrf_field() }}
+      </form>
+      @yield('content')
     </div>
-    <!-- /.content-wrapper -->
-    @include('admin.include.footer')
+    <!-- /.container -->
   </div>
-  <!-- ./wrapper -->
+  <!-- /.content-wrapper -->
+  <!-- @include('admin.include.footer') -->
+</div>
+<!-- ./wrapper -->
 
-  <!-- jQuery 3 -->
-  <script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
-  <!-- jQuery UI 1.11.4 -->
-  <script src="{{ asset('public/assets/js/jquery-ui.min.js') }}"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>
-  <!-- FastClick -->
-  <script src="{{ asset('public/assets/js/fastclick.js') }}"></script>
-  <!-- AdminLTE App -->
-  <script src="{{ asset('public/assets/js/dist/adminlte.min.js') }}"></script>
-  <!-- Sparkline -->
-  <script src="{{ asset('public/assets/js/jquery.sparkline.min.js') }}"></script>
-  <!-- jvectormap  -->
-  <script src="{{ asset('public/assets/js/jVectorMap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/jVectorMap/jquery-jvectormap-world-mill-en.js') }}"></script>
-  <!-- jQuery Knob Chart -->
-  <script src="{{ asset('public/assets/js/jquery-knob/dist/jquery.knob.min.js') }}"></script>
-  <!-- SlimScroll -->
-  <script src="{{ asset('public/assets/js/jquery.slimscroll.min.js') }}"></script>
-  <!-- <script src="{{ asset('public/assets/js/dashboard.js') }}"></script> -->
-  <script src="{{ asset('public/assets/js/Chart.js') }}"></script>
-  <!-- ChartJS -->
-  <script src="{{ asset('public/assets/js/raphael.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/morris.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/sweetalert.js') }}"></script>
+<!-- jQuery 3 -->
+<script src="{{ asset('public/assets/js/jquery.min.js') }}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{{ asset('public/assets/js/jquery-ui.min.js') }}"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{{ asset('public/assets/js/bootstrap.min.js') }}"></script>
+<!-- FastClick -->
+<script src="{{ asset('public/assets/js/fastclick.js') }}"></script>
+<!-- AdminLTE App -->
+<script src="{{ asset('public/assets/js/dist/adminlte.min.js') }}"></script>
+<!-- Sparkline -->
+<script src="{{ asset('public/assets/js/jquery.sparkline.min.js') }}"></script>
+<!-- jvectormap  -->
+<script src="{{ asset('public/assets/js/jVectorMap/jquery-jvectormap-1.2.2.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/jVectorMap/jquery-jvectormap-world-mill-en.js') }}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{{ asset('public/assets/js/jquery-knob/dist/jquery.knob.min.js') }}"></script>
+<!-- SlimScroll -->
+<script src="{{ asset('public/assets/js/jquery.slimscroll.min.js') }}"></script>
+<!-- <script src="{{ asset('public/assets/js/dashboard.js') }}"></script> -->
+<script src="{{ asset('public/assets/js/Chart.js') }}"></script>
+<!-- ChartJS -->
+<script src="{{ asset('public/assets/js/raphael.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/morris.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/sweetalert.js') }}"></script>
 
-  <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 
-  <!-- AdminLTE for demo purposes -->
-  <script src="{{ asset('public/assets/js/demo.js') }}"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="{{ asset('public/assets/js/demo.js') }}"></script>
 
-  <script src="{{ asset('public/assets/js/jquery.dataTables.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/dataTables.bootstrap.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/jquery.dataTables.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/dataTables.bootstrap.min.js') }}"></script>
 
-  <script src="{{ asset('public/assets/js/bootstrap-datepicker.min.js') }}"></script>
-  <script src="{{ asset('public/assets/js/daterangepicker.js') }}"></script>
-  <script src="{{ asset('public/assets/js/select2.full.min.js') }}"></script>
-  <script>
-    $(function () {
+<script src="{{ asset('public/assets/js/bootstrap-datepicker.min.js') }}"></script>
+<script src="{{ asset('public/assets/js/daterangepicker.js') }}"></script>
+<script src="{{ asset('public/assets/js/select2.full.min.js') }}"></script>
+<script>
+  $(function () {
     $('.select2').select2()
     // $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
     //   checkboxClass: 'icheckbox_minimal-blue',
     //   radioClass   : 'iradio_minimal-blue'
     // })
- 
+    
     // $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
     //   checkboxClass: 'icheckbox_minimal-red',
     //   radioClass   : 'iradio_minimal-red'
@@ -155,8 +160,8 @@
        },
        cancel : function () {
        console.log("cancel : " + this.value);
-       },*/
-      draw: function () {
+     },*/
+     draw: function () {
 
         // "tron" case
         if (this.$.data('skin') == 'tron') {
@@ -168,38 +173,38 @@
               , eat = sat + a                 // End angle
               , r = true;
 
-          this.g.lineWidth = this.lineWidth;
+              this.g.lineWidth = this.lineWidth;
 
-          this.o.cursor
-          && (sat = eat - 0.3)
-          && (eat = eat + 0.3);
+              this.o.cursor
+              && (sat = eat - 0.3)
+              && (eat = eat + 0.3);
 
-          if (this.o.displayPrevious) {
-            ea = this.startAngle + this.angle(this.value);
-            this.o.cursor
-            && (sa = ea - 0.3)
-            && (ea = ea + 0.3);
-            this.g.beginPath();
-            this.g.strokeStyle = this.previousColor;
-            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
-            this.g.stroke();
+              if (this.o.displayPrevious) {
+                ea = this.startAngle + this.angle(this.value);
+                this.o.cursor
+                && (sa = ea - 0.3)
+                && (ea = ea + 0.3);
+                this.g.beginPath();
+                this.g.strokeStyle = this.previousColor;
+                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sa, ea, false);
+                this.g.stroke();
+              }
+
+              this.g.beginPath();
+              this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
+              this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
+              this.g.stroke();
+
+              this.g.lineWidth = 2;
+              this.g.beginPath();
+              this.g.strokeStyle = this.o.fgColor;
+              this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+              this.g.stroke();
+
+              return false;
+            }
           }
-
-          this.g.beginPath();
-          this.g.strokeStyle = r ? this.o.fgColor : this.fgColor;
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, sat, eat, false);
-          this.g.stroke();
-
-          this.g.lineWidth = 2;
-          this.g.beginPath();
-          this.g.strokeStyle = this.o.fgColor;
-          this.g.arc(this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
-          this.g.stroke();
-
-          return false;
-        }
-      }
-    });
+        });
     /* END JQUERY KNOB */
 
     //INITIALIZE SPARKLINE CHARTS
@@ -218,7 +223,7 @@
     // Bar + line composite charts
     $('#compositebar').sparkline('html', {type: 'bar', barColor: '#aaf'});
     $('#compositebar').sparkline([4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7],
-        {composite: true, fillColor: false, lineColor: 'red'});
+      {composite: true, fillColor: false, lineColor: 'red'});
 
 
     // Line charts taking their values from the tag
@@ -226,14 +231,14 @@
 
     // Larger line charts for the docs
     $('.largeline').sparkline('html',
-        {type: 'line', height: '2.5em', width: '4em'});
+      {type: 'line', height: '2.5em', width: '4em'});
 
     // Customized line chart
     $('#linecustom').sparkline('html',
-        {
-          height: '1.5em', width: '8em', lineColor: '#f00', fillColor: '#ffa',
-          minSpotColor: false, maxSpotColor: false, spotColor: '#77f', spotRadius: 3
-        });
+    {
+      height: '1.5em', width: '8em', lineColor: '#f00', fillColor: '#ffa',
+      minSpotColor: false, maxSpotColor: false, spotColor: '#77f', spotRadius: 3
+    });
 
     // Bar charts using inline values
     $('.sparkbar').sparkline('html', {type: 'bar'});
@@ -249,24 +254,24 @@
     // Tri-state charts using inline values
     $('.sparktristate').sparkline('html', {type: 'tristate'});
     $('.sparktristatecols').sparkline('html',
-        {type: 'tristate', colorMap: {'-2': '#fa7', '2': '#44f'}});
+      {type: 'tristate', colorMap: {'-2': '#fa7', '2': '#44f'}});
 
     // Composite line charts, the second using values supplied via javascript
     $('#compositeline').sparkline('html', {fillColor: false, changeRangeMin: 0, chartRangeMax: 10});
     $('#compositeline').sparkline([4, 1, 5, 7, 9, 9, 8, 7, 6, 6, 4, 7, 8, 4, 3, 2, 2, 5, 6, 7],
-        {composite: true, fillColor: false, lineColor: 'red', changeRangeMin: 0, chartRangeMax: 10});
+      {composite: true, fillColor: false, lineColor: 'red', changeRangeMin: 0, chartRangeMax: 10});
 
     // Line charts with normal range marker
     $('#normalline').sparkline('html',
-        {fillColor: false, normalRangeMin: -1, normalRangeMax: 8});
+      {fillColor: false, normalRangeMin: -1, normalRangeMax: 8});
     $('#normalExample').sparkline('html',
-        {fillColor: false, normalRangeMin: 80, normalRangeMax: 95, normalRangeColor: '#4f4'});
+      {fillColor: false, normalRangeMin: 80, normalRangeMax: 95, normalRangeColor: '#4f4'});
 
     // Discrete charts
     $('.discrete1').sparkline('html',
-        {type: 'discrete', lineColor: 'blue', xwidth: 18});
+      {type: 'discrete', lineColor: 'blue', xwidth: 18});
     $('#discrete2').sparkline('html',
-        {type: 'discrete', lineColor: 'blue', thresholdColor: 'red', thresholdValue: 4});
+      {type: 'discrete', lineColor: 'blue', thresholdColor: 'red', thresholdValue: 4});
 
     // Bullet charts
     $('.sparkbullet').sparkline('html', {type: 'bullet'});
@@ -277,7 +282,7 @@
     // Box plots
     $('.sparkboxplot').sparkline('html', {type: 'box'});
     $('.sparkboxplotraw').sparkline([1, 3, 5, 8, 10, 15, 18],
-        {type: 'box', raw: true, showOutliers: true, target: 6});
+      {type: 'box', raw: true, showOutliers: true, target: 6});
 
     // Box plot with specific field order
     $('.boxfieldorder').sparkline('html', {
@@ -290,7 +295,7 @@
     $('.clickdemo').sparkline();
     $('.clickdemo').bind('sparklineClick', function (ev) {
       var sparkline = ev.sparklines[0],
-          region = sparkline.getCurrentRegionFields();
+      region = sparkline.getCurrentRegionFields();
       value = region.y;
       alert("Clicked on x=" + region.x + " y=" + region.y);
     });
@@ -299,7 +304,7 @@
     $('.mouseoverdemo').sparkline();
     $('.mouseoverdemo').bind('sparklineRegionChange', function (ev) {
       var sparkline = ev.sparklines[0],
-          region = sparkline.getCurrentRegionFields();
+      region = sparkline.getCurrentRegionFields();
       value = region.y;
       $('.mouseoverregion').text("x=" + region.x + " y=" + region.y);
     }).bind('mouseleave', function () {
@@ -314,7 +319,7 @@
    ** and then updates the display a couple of times a second via
    ** setTimeout()
    **/
-  function drawMouseSpeedDemo() {
+   function drawMouseSpeedDemo() {
     var mrefreshinterval = 500; // update display every 500ms
     var lastmousex = -1;
     var lastmousey = -1;

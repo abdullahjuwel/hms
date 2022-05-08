@@ -148,7 +148,7 @@
 						</div>
 					</div>
 
-					<div class="" style="height: 600px; overflow-y: auto;overflow-x: hidden;">
+					<div class="" style="height: 500px; overflow-y: auto;overflow-x: hidden;">
 					<div class="row">
 						<div class="col-md-12">
 							<section class="content">

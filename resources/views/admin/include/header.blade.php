@@ -1,9 +1,9 @@
-<div class="text-center" style="padding: 6px;background-color: #105e7d;color: white;"><b>Monowara Hospital & Diagnostic Centre</b>
+<!-- <div class="text-center" style="padding: 6px;background-color: #105e7d;color: white;"><b>Monowara Hospital & Diagnostic Centre</b>
   <a class="btn btn-sm btn-primary pull-right" href="" onclick="event.preventDefault(); document.getElementById('frm-logout').submit();">Logout</a>    
   <form id="frm-logout" action="{{ route('logout') }}" method="POST" style="display: none;">
     {{ csrf_field() }}
   </form>
-</div>
+</div> -->
 <header class="main-header">
   <nav class="navbar navbar-static-top">
     <div class="container">

@@ -177,7 +177,7 @@ class PatientController extends ResponseController
                 $nestedData['name']         = $patient->name;
                 $nestedData['phone']        = $patient->phone;
                 $nestedData['email']        = $patient->email;
-                $nestedData['image']        = "<img src='{$imageURL}' class='profile-user-img img-responsive img-circle img-sm zoom' alt='Member Image'>";
+                $nestedData['image']        = "<img src='{$imageURL}' class='profile-user-img img-responsive img-circle img-sm' alt='Member Image'>";
                 $nestedData['dob']          = $patient->dob;
                 $nestedData['gender']       = $patient->gender;
                 $nestedData['blood_group']  = $patient->blood_group;
